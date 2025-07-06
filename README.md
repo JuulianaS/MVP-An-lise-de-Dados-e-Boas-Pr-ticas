@@ -1,69 +1,87 @@
-# Previsão de Vendas de Medicamentos para Câncer de Próstata
+# MVP Análise de Dados e Boas Práticas
 
-Este projeto realiza análise e modelagem preditiva com dados da IQVIA para prever o comportamento de vendas de medicamentos voltados ao tratamento do câncer de próstata. Foram desenvolvidos dois modelos supervisionados com abordagens distintas:
+## 📌 Projeto: Análise da Demanda de Medicamentos para Câncer de Próstata (Estágio Avançado)
 
-- **Modelo 1:** Previsão do **valor da venda** com base em variáveis históricas e de mercado.
-- **Modelo 2:** Previsão das **vendas para os próximos 6 meses**, permitindo insights temporais para planejamento estratégico.
-
----
-
-## Objetivos
-
-- Aplicar técnicas de pré-processamento e normalização.
-- Construir modelos de regressão supervisionada para previsão de vendas.
-- Gerar visualizações para interpretar padrões, tendências e desempenho dos modelos.
-- Apoiar decisões de negócio por meio de previsões robustas.
+**Autora:** Juliana Silva
+**Matrícula:** 4052025000237
 
 ---
 
-### Técnicas Utilizadas
+## 📖 Contexto
 
-- Regressão supervisionada
-- Análise exploratória de dados (EDA)
-- Pré-processamento (tratamento de outliers, normalização, encoding)
-- Visualização com gráficos interativos
-- Divisão treino/teste e validação cruzada
-- Avaliação de desempenho (RMSE, R², MAE)
-  
----
+O câncer de próstata é uma das principais causas de mortalidade masculina no Brasil, principalmente em estágios avançados. O tratamento envolve medicamentos altamente especializados, cujo consumo e valor podem refletir aspectos importantes relacionados ao acesso à saúde, gestão hospitalar, disponibilidade regional e estratégias comerciais das empresas farmacêuticas.
 
-## Tecnologias Utilizadas
-
-- **Linguagem:** Python 3.11
-- **Bibliotecas:**  
-  - Pandas, NumPy  
-  - Scikit-learn  
-  - Matplotlib, Seaborn  
-  - XGBoost / LightGBM *(se aplicável)*
+Este projeto utiliza dados reais disponibilizados pela IQVIA, devidamente anonimizados, garantindo total confidencialidade e conformidade com as normas éticas.
 
 ---
 
-## Estrutura do Projeto
-├── data/ # Arquivos brutos e tratados (não incluídos)
-├── tratamentos e modelo de previsões/ # Jupyter notebooks com a análise e modelagem
-└── README.md # Este arquivo
+## 🎯 Objetivos
 
-Todo o projeto foi desenvolvido no Google Colab, facilitando a reprodutibilidade e visualização interativa dos resultados.
+O projeto busca realizar uma análise exploratória profunda e criar modelos preditivos robustos com duas vertentes principais:
 
+* **Modelo Preditivo de Regressão:** Estimar o valor das vendas individuais com base em atributos como localização, canal de venda, produto e quantidade comercializada.
+* **Modelo de Séries Temporais (Prophet):** Prever vendas totais (valor e unidades) dos próximos meses, identificando tendências e auxiliando o planejamento estratégico.
 
-### Como Executar
+---
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/nome-do-repo.git
+## 📁 Estrutura do projeto
 
+```
+│
+├── 📂 dados
+│   └── Demanda_Medicamentos.csv
+│
+├── 📂 notebooks (Mesmo arquivo disponível nas duas versões)
+│   └── analise_exploratoria_e_modelagem.ipynb
+│   └── analise_exploratoria_e_modelagem.py
+│
+└── README.md
+```
 
-### Observações
-O modelo leva em consideração tendências sazonais e padrões históricos observados nos dados.
+---
 
-Resultados e gráficos estão integrados aos notebooks para facilitar a interpretação.
+## 🛠️ Ferramentas e Tecnologias
 
-### Próximos Passos
-  - Implementar ajuste automático de hiperparâmetros
-  - Incorporar variáveis externas (ex: políticas de mercado, concorrência)
-  - Criar dashboard com visualização interativa
+* **Python**
+* **Google Colab**
+* **Pandas**
+* **Matplotlib e Seaborn**
+* **Scikit-learn** (Regressão Linear, Random Forest, Pipeline, ColumnTransformer, SelectKBest)
+* **Prophet** (Modelagem de séries temporais)
+
+---
+
+## ✅ Principais resultados
+
+* **Random Forest** apresentou resultados excelentes (R² próximo a 1.0), indicando ótima captura das complexidades e não linearidades dos dados.
+* **Regressão Linear** obteve desempenho razoável (R² médio \~0,59).
+* **Prophet** apresentou previsões promissoras, mas com recomendações de ampliar o histórico temporal para melhorar a precisão.
+
+---
+
+## 📊 Insights Estratégicos
+
+* O mercado de medicamentos oncológicos está em expansão moderada, indicando oportunidades para investimentos logísticos e estratégias comerciais específicas.
+* Canal hospitalar apresenta valores mais altos, reforçando sua importância estratégica.
+* Estabilidade relativa nos valores médios anuais demonstra um mercado consistente, mas com oportunidades pontuais de melhoria regional e por produto.
+
+---
+
+## 📈 Possíveis melhorias futuras
+
+* Aumentar a base temporal dos dados para melhorar a precisão dos modelos preditivos.
+* Testar os modelos com novos dados para avaliar melhor a generalização e reduzir risco de overfitting.
+* Incorporar variáveis externas (campanhas de saúde pública, mudanças regulatórias, etc.) para melhorar previsões futuras.
+
+---
+
+## 📜 Licença
+
+Este projeto utiliza dados anonimizados com permissão da IQVIA e destina-se exclusivamente a fins acadêmicos e analíticos.
 
 
 ### Autora
-[juliana Silva]
-[LinkedIn]
+[juliana Silva][LinkedIn](https://www.linkedin.com/in/jjulianasilva/)
+
+[Link do Google Colab](https://colab.research.google.com/drive/1QyWgRWg2Q7r76WkHXsczTTnNWMXKGG4g?usp=sharing)
+
